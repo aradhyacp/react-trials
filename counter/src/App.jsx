@@ -8,6 +8,16 @@ function App() {
   const [classColor, setclassColor] = useState("");
   const addValue = () => {
     console.log(counter);
+    if(counter>=20){
+      Toastify({
+      text: "Cant go more than 20 !",
+      duration: 3000,
+      style: {
+        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
+      }
+    }).showToast();
+    return
+    }
     setCounter(counter + 1);
     setclassColor("green");
     Toastify({
@@ -21,6 +31,15 @@ function App() {
   };
 
   const minusValue = () => {
+    if(counter<=0){Toastify({
+      text: "Cant go less than 0 !",
+      duration: 3000,
+      style: {
+        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
+      }
+    }).showToast();
+  return;
+  }
     setCounter(counter - 1);
     setclassColor("red");
     Toastify({
