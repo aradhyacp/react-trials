@@ -29,7 +29,7 @@ function App() {
       displayToast("Cant go more than 20 !", 3000, errorGradient);
       return;
     }
-    setCounter(counter + 1);
+    setCounter(prevCounter => prevCounter + 1)
     setclassColor("green");
     displayToast("Added +1", 1000, addGradient);
   };
@@ -39,7 +39,7 @@ function App() {
       displayToast("Cant go less than 0 !", 3000, errorGradient);
       return;
     }
-    setCounter(counter - 1);
+    setCounter(prevCounter => prevCounter -1);
     setclassColor("red");
     displayToast("Reduced by -1", 1000, removeGradient);
   };
