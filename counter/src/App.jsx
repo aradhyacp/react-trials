@@ -6,49 +6,36 @@ import "toastify-js/src/toastify.css";
 function App() {
   const [counter, setCounter] = useState(5);
   const [classColor, setclassColor] = useState("");
+
+  const displayToast = (text,dur,bg) =>{
+    Toastify({
+      text: text,
+      duration: dur,
+      style: {
+        background: bg,
+      }
+    }).showToast();
+  }
+
   const addValue = () => {
     console.log(counter);
     if(counter>=20){
-      Toastify({
-      text: "Cant go more than 20 !",
-      duration: 3000,
-      style: {
-        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
-      }
-    }).showToast();
+      displayToast("Cant go more than 20 !",3000,"linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))");
     return
     }
     setCounter(counter + 1);
     setclassColor("green");
-    Toastify({
-      text: "Added +1",
-      duration: 1000,
-      style: {
-        background:
-          "linear-gradient(to right, rgb(0, 176, 155), rgb(150, 201, 61))",
-      },
-    }).showToast();
+    displayToast("Added +1",1000,"linear-gradient(to right, rgb(0, 176, 155), rgb(150, 201, 61))")
   };
 
   const minusValue = () => {
-    if(counter<=0){Toastify({
-      text: "Cant go less than 0 !",
-      duration: 3000,
-      style: {
-        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
-      }
-    }).showToast();
+    if(counter<=0){
+      displayToast("Cant go less than 0 !",3000,"linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))");
   return;
   }
     setCounter(counter - 1);
     setclassColor("red");
-    Toastify({
-      text: "Reduced -1",
-      duration: 1000,
-      style: {
-        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
-      }
-    }).showToast();
+    displayToast("Reduced by -1",1000,"linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))")
   };
 
   useEffect(() => {
