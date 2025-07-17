@@ -29,14 +29,13 @@ function App() {
   return (
     <>
       <h1 className='bg-green-500 p-4 rounded-2xl text-white w-3xl text-6xl'>Tailwind and Props Test</h1>
-      <div className="flex gap-6 mt-6 w-[85%] flex-wrap">
+      <div className="columns-3 gap-4 mt-7">
       <Card nft={Obj1}/>
       <Card nft={Obj2}/>
       <Card nft={Obj3}/>
       <Card nft={Obj4}/>
-      <Card nft={Obj4}/>
-      <Card nft={Obj4}/>
-      <Card nft={Obj4}/>
+      <Card nft={Obj1}/>
+      <Card nft={Obj3}/>
       </div>
     </>
   )

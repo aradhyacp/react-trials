@@ -5,7 +5,7 @@ const Card = ({nft}) => {
     
   return (
     <div className='flex items-start'>
-          <div className="flex flex-col rounded-xl p-4 "
+          <div className="flex break-inside-avoid mb-4 flex-col rounded-xl p-4 "
         style={{
           border: '0.88px solid',
   
@@ -33,7 +33,7 @@ const Card = ({nft}) => {
           </div>
         </div>
       </div>
-    </div>
+       </div>
   )
 }
 
