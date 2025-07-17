@@ -47,23 +47,6 @@ function App() {
         <div className="flex justify-center p-7 rounded-xl font-medium">
           Password Generator
         </div>
-        {/* <div className="flex w-full items-center text-orange-400 bg-gray-600 p-5 mt-7 rounded-lg">
-          <input
-            type="text"
-            value={password}
-            readOnly
-            placeholder="password"
-            className="w-full bg-white rounded-lg p-4"
-            ref={passwordRef}
-          />
-          <button className="outline-none bg-blue-700 text-white shrink-0 p-4 rounded-lg ml-3 cursor-pointer" onClick={()=>{
-            window.navigator.clipboard.writeText(password);
-            passwordRef.current.select();
-            displayToast("Copied to Clipboard",2000)
-          }}>
-            copy
-          </button>
-        </div> */}
         <div className="flex w-[1000px] mt-6">
           <label className="flex w-full content-center">
             <div className="flex w-[80%]">
@@ -100,18 +83,6 @@ function App() {
           </label>
         </div>
         <div className="flex gap-20 mt-20 flex-col">
-          {/* <div className="flex gap-3">
-            <input
-              type="range"
-              min={8}
-              max={35}
-              value={length}
-              onChange={(e) => {
-                setLength(e.target.value);
-              }}
-            />
-            <label>Length: {length}</label>
-          </div> */}
           <div className="flex w-[1000px] gap-5 items-center">
             <div className="flex">Password Length</div>
             <input
@@ -126,21 +97,6 @@ function App() {
             />
             <div className="flex ml-3">{length}</div>
           </div>
-          {/* <div className="flex gap-3">
-            <input
-              type="checkbox"
-              id="numberInput"
-              defaultChecked={numeric}
-              onChange={(e) => {
-                setNumeric((prev) => {
-                  const newValue = !prev;
-                  console.log(`NUMERIC: previous was ${prev}, now ${newValue}`);
-                  return newValue;
-                });
-              }}
-            />
-            <label htmlFor="">Numeric</label>
-          </div> */}
           <div className="flex flex-row items-center gap-5">
             <input
               type="checkbox"
@@ -157,21 +113,6 @@ function App() {
               }}
             /> <div className="flex">Include Numbers</div>
           </div>
-          {/* <div className="flex gap-3">
-            <input
-              type="checkbox"
-              id="charInput"
-              defaultChecked={char}
-              onChange={(e) => {
-                setChar((prev) => {
-                  const newValue = !prev;
-                  console.log(`Char: previous was ${prev}, now ${newValue}`);
-                  return newValue;
-                });
-              }}
-            />
-            <label htmlFor="">Characters</label>
-          </div> */}
           <div className="flex flex-row items-center gap-5">
             <input
               type="checkbox"
