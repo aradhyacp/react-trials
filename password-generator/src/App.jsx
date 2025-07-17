@@ -27,7 +27,7 @@ function App() {
       string += "!@#$%^&*-_+=[]{}";
     }
 
-    for (let index = 0; index <= length; index++) {
+    for (let index = 0; index < length; index++) {
       let c = Math.floor(Math.random() * string.length);
       pass += string.charAt(c);
     }
@@ -38,7 +38,7 @@ function App() {
   useEffect(()=>{
     passwordGenerator()
 
-  },[length,char,passwordGenerator])
+  },[length,numeric,char,passwordGenerator])
 
   return (
     <div className="bg-gray-900 h-screen text-black text-4xl">
