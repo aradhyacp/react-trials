@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import "./App.css";
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
+import Header from "./components/Header";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -41,7 +42,8 @@ function App() {
   },[length,numeric,char,passwordGenerator])
 
   return (
-    <div className="bg-gray-900 h-screen text-black text-4xl">
+    <div className="bg-[#122117] h-screen text-black text-4xl">
+      <Header/>
       <div className="flex flex-col justify-center p-7 items-center">
         <div className="bg-green-300 flex justify-center p-7 rounded-xl font-medium">
           Password Generator
