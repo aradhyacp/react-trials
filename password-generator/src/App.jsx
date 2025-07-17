@@ -36,19 +36,19 @@ function App() {
     setPassword(pass);
   }, [length, numeric, char, setPassword]);
 
-  useEffect(() => {
-    passwordGenerator();
-  }, [length, numeric, char, passwordGenerator]);
+  // useEffect(() => {
+  //   passwordGenerator();
+  // }, [length, numeric, char, passwordGenerator]);
 
   return (
     <div className="bg-[#122117] h-screen text-white text-4xl">
       <Header />
       <div className="flex flex-col justify-center p-7 items-center">
-        <div className="flex justify-center p-7 rounded-xl font-medium">
+        <div className="flex justify-center p-7 rounded-xl font-medium ">
           Password Generator
         </div>
         <div className="flex w-[1000px] mt-6">
-          <label className="flex w-full content-center">
+          <label className="flex w-full flex-row justify-center">
             <div className="flex w-[80%]">
               <input
                 type="text"
@@ -130,6 +130,10 @@ function App() {
             /> <div className="flex">Include Special Characters</div>
           </div>
         </div>
+        <div className="flex text-black bg-[#38e07b] text-[32px] px-7 py-3 rounded-xl mt-15 cursor-pointer hover:bg-[#4bdc8b]" onClick={()=>{
+          passwordGenerator();
+          displayToast("Password generated !",2500);
+        }}>Generate</div>
       </div>
     </div>
   );
