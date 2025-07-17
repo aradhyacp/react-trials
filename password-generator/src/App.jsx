@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import "./App.css";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function App() {
   const [length, setLength] = useState(8);
@@ -7,6 +9,13 @@ function App() {
   const [char, setChar] = useState(false);
   const [password, setPassword] = useState("");
   const passwordRef = useRef(null)
+
+    const displayToast = (text,dur) =>{
+    Toastify({
+      text: text,
+      duration: dur
+    }).showToast();
+  }
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -49,6 +58,7 @@ function App() {
           <button className="outline-none bg-blue-700 text-white shrink-0 p-4 rounded-lg ml-3 cursor-pointer" onClick={()=>{
             window.navigator.clipboard.writeText(password);
             passwordRef.current.select();
+            displayToast("Copied to Clipboard",2000)
           }}>
             copy
           </button>
