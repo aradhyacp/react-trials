@@ -1,0 +1,7 @@
+.hero-section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrQN0GO4FqXCv4YyyVP-1MvyKKOaR-OsXZndpOn610I3LMfkQU747_fYAFTTf6wjx8sDd12tIlJkiPKpfqsMcLUF8qsNASNeIOq2NLjj0eAtS7hlx55hp-3g0KZWS1ipgqK9L4fupKGrWPP9MX7m_CcqCcFsoTFgFwztpVUCKX9eOCjJW3cBhtB6AgZ_yls0rAQSu4e_956Zl1Ncw13M0RWFXwolf-0PaA3BkanUrStQQOOConrFZNwbcBsocsY9AxD8F4H3_QO6I");
+    color: white;
+}
+.hero-button{
+    background-color: black;
+}
