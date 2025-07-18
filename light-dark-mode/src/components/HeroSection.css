@@ -3,5 +3,6 @@
     color: white;
 }
 .hero-button{
-    background-color: black;
+    background-color: var(--btn-bg);
+    color: var(--bg);
 }

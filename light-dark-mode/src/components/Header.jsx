@@ -1,11 +1,29 @@
 import React from "react";
 import "./Header.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
+  const [darkMode,setDarkMode] = useState(false);
+  const toggleDarkMode = () =>{
+    console.log("button clicked");
+    console.log(`before clicking ${darkMode}`);
+    setDarkMode(prev=>!prev);
+  }
+
+  useEffect(()=>{
+    if(darkMode){
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  },[darkMode]);
+
+
   return (
     <div className="flex header-container items-center flex-row justify-between">
       <div className="flex items-center gap-4 header-logo-container px-10 py-5">
-        <div class="size-6">
+        <div className="size-6">
           <svg
             viewBox="0 0 48 48"
             fill="none"
@@ -23,12 +41,13 @@ const Header = () => {
         <div className="cursor-pointer header-nav">Home</div>
         <div className="cursor-pointer header-nav">About</div>
         <div className="cursor-pointer header-nav">Contact</div>
-        <div className="cursor-pointer dark-mode rounded-lg">
+        <div className="flex">
           <div
-            class="text-[#141414]"
+            className="mode-button rounded-lg cursor-pointer"
             data-icon="Sun"
             data-size="20px"
             data-weight="regular"
+            onClick={toggleDarkMode}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

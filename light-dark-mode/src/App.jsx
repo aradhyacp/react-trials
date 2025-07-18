@@ -6,7 +6,7 @@ import HeroSection from './components/HeroSection'
 function App() {
 
   return (
-    <div className="">
+    <div>
       <Header/>
       <HeroSection/>
       <Footer/>
