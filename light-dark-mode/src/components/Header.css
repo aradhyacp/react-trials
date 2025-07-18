@@ -1,0 +1,23 @@
+
+.header-container{
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid #ededed;
+}
+.header-text{
+    font-weight: 600;
+}
+.header-nav:hover{
+    border-bottom: 2px solid #b2b2b2;
+}
+.dark-mode{
+    padding: 8px 15px;
+    background-color: #dadada;
+
+}
+.dark-mode:hover{
+    background-color: #cccccc;
+}
+.pfp{
+    background-image: url("/defaultpfp.jpeg");
+}
