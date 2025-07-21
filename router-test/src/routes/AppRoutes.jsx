@@ -5,6 +5,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Github from "../pages/Github";
 import MainLayout from "../layout/MainLayout";
+import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/github" element={<Github />}></Route>
         </Route>
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </Router>
   );
