@@ -1,31 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import InputBox from './components/InputBox'
-import useCurrencyInfo from './hooks/useCurrencyInfo'
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
+import "./App.css";
+import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
+import Convertor from "./components/Convertor";
 
 function App() {
-  const [amount,setAmount] = useState('');
-  const [from,setFrom] = useState("usd");
-  const [to,setTo] = useState("inr")
-  const [result,setResult] = useState(0)
 
-  const currencyInfo = useCurrencyInfo(from)
-  const options = Object.keys(currencyInfo);
-  const swap = () =>{
-    setFrom(to)
-    setTo(from)
-  }
-  const convert = () =>{
-    if (!currencyInfo[to]) return;
-    setResult(amount*currencyInfo[to])
-  }
-
-  return (<div className="">
-  <Header/>
-  <HeroSection/>
-            <div className="w-full">
+  return (
+    <div className="">
+      <Header />
+      <HeroSection />
+      <Convertor />
+      {/* <div className="w-full">
                 <div className="w-[50%] mx-auto border border-gray-300 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
                         onSubmit={(e) => {
@@ -68,9 +53,9 @@ function App() {
                         </button>
                     </form>
                 </div>
-            </div>
-</div>
-    );
+            </div> */}
+    </div>
+  );
 }
 
-export default App
+export default App;

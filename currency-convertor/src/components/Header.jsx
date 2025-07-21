@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="flex px-10 py-4 border-b-2 border-solid border-b-[#f0f2f4] justify-between">
       <div className="flex flex-row items-center gap-3">
-        <div class="size-4">
+        <div className="size-4">
           <svg
             viewBox="0 0 48 48"
             fill="none"
