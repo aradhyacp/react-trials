@@ -4,15 +4,18 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Github from "../pages/Github";
+import MainLayout from "../layout/MainLayout";
 
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/github" element={<Github/>}></Route>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/github" element={<Github />}></Route>
+        </Route>
       </Routes>
     </Router>
   );
