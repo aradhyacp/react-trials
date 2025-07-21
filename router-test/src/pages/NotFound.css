@@ -103,16 +103,16 @@
 }
 */
 
-a {
+.notfound a {
   color: #fff;
   text-decoration: none;
 }
 
-a::before {
+.notfound a::before {
   content: "[";
 }
 
-a::after {
+.notfound a::after {
   content: "]";
 }
 
