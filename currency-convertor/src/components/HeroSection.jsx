@@ -3,7 +3,7 @@ import "./HeroSection.css";
 
 const HeroSection = () => {
   return (
-    <div className="flex mt-6 w-full justify-center h-[500px]">
+    <div className="flex mt-6 w-full justify-center h-[350px]">
       <div className="flex w-[70%] hero-section bg-no-repeat bg-cover h-full rounded-2xl flex-col items-center justify-center p-15">
         <div className="flex text-white text-5xl font-black text-center">
           Convert currencies at the real exchange rate

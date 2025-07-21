@@ -17,6 +17,8 @@
   background-position: center;
   filter: blur(8px);
   z-index: 0;
+  border-radius: inherit;
+  transform: scale(1.05);
 }
 
 .hero-section > div {
