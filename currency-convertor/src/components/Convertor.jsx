@@ -14,6 +14,8 @@ const Convertor = () => {
   const swap = () => {
     setFrom(to);
     setTo(from);
+    setAmount(result.toString())
+    setResult("")
   };
 const convert = () => {
   const numericAmount = parseFloat(amount);
