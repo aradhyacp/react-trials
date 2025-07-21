@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import InputBox from './components/InputBox'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
 
 function App() {
   const [amount,setAmount] = useState('');
@@ -20,13 +22,9 @@ function App() {
     setResult(amount*currencyInfo[to])
   }
 
-  return (
-        <div
-            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
-            style={{
-              backgroundImage: `url('https://images.pexels.com/photos/1006060/pexels-photo-1006060.jpeg?cs=srgb&dl=pexels-steve-1006060.jpg&fm=jpg&w=5184&h=2968&_gl=1*13omp1n*_ga*MTA4NjQ1NzA4Ny4xNzUyODYyMjY0*_ga_8JE65Q40S6*czE3NTI4NjIyNjMkbzEkZzEkdDE3NTI4NjIyOTQkajI5JGwwJGgw')`
-            }}
-        >
+  return (<div className="">
+  <Header/>
+  <HeroSection/>
             <div className="w-full">
                 <div className="w-[50%] mx-auto border border-gray-300 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
@@ -71,7 +69,7 @@ function App() {
                     </form>
                 </div>
             </div>
-        </div>
+</div>
     );
 }
 

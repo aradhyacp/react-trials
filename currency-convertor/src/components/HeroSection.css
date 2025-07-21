@@ -1,0 +1,25 @@
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('https://images.pexels.com/photos/1006060/pexels-photo-1006060.jpeg?cs=srgb&dl=pexels-steve-1006060.jpg&fm=jpg&w=5184&h=2968&_gl=1*13omp1n*_ga*MTA4NjQ1NzA4Ny4xNzUyODYyMjY0*_ga_8JE65Q40S6*czE3NTI4NjIyNjMkbzEkZzEkdDE3NTI4NjIyOTQkajI5JGwwJGgw');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.hero-section > div {
+  position: relative;
+  z-index: 1;
+}
