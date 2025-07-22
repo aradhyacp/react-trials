@@ -35,8 +35,22 @@ const Footer = () => {
           </div>
           <div className="flex flex-col">
             Follow us
-            <div className="cursor-pointer text-[#919191]">Github</div>
-            <div className="cursor-pointer text-[#919191]">Discord</div>
+            <NavLink
+              to="/github"
+              className={({ isActive }) =>
+                `${isActive ? "text-orange-700" : "text-[#919191]"}`
+              }
+            >
+              Github
+            </NavLink>
+            <NavLink
+              to="/discord"
+              className={({ isActive }) =>
+                `${isActive ? "text-orange-700" : "text-[#919191]"}`
+              }
+            >
+              Discord
+            </NavLink>
           </div>
           <div className="flex flex-col">
             Legal
