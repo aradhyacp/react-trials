@@ -8,13 +8,13 @@ const Header = () => {
         <div className="flex">
           <Link to="/">
             <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+              src="/logo-2.png"
               alt="logo"
               className="h-12"
             />
           </Link>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-10 text-xl">
           <NavLink
             to="/"
             className={({ isActive }) =>
