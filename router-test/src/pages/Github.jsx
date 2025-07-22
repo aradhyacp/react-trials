@@ -1,22 +1,24 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Github = () => {
-  const [data, setData] = useState("");
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("https://api.github.com/users/aradhyacp", {
-        method: "GET",
-      });
-      const json = await response.json();
-      setData(json);
-    };
-    fetchData();
-  }, []);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+//   const [data, setData] = useState("");
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const response = await fetch("https://api.github.com/users/aradhyacp", {
+//         method: "GET",
+//       });
+//       const json = await response.json();
+//       setData(json);
+//     };
+//     fetchData();
+//   }, []);
+//   useEffect(() => {
+//     console.log(data);
+//   }, [data]);
+    const data = useLoaderData();
 
   return (
     <div className="w-full">
@@ -40,3 +42,10 @@ const Github = () => {
 };
 
 export default Github;
+
+export const githubInfoLoader = async () => {
+    const response = await fetch('https://api.github.com/users/aradhyacp',{
+        method: "GET"
+    })
+    return response.json()
+}
