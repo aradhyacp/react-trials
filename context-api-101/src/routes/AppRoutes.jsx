@@ -9,19 +9,22 @@ import Landing from "../pages/Landing";
 import Dashboard from "../pages/Dashboard";
 import Login from "../components/Login";
 import Profile from "../components/Profile";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const AppRoutes = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<Landing/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/dashboard" element={<Dashboard/>}></Route>
-        <Route path="/profile" element={<Profile/>}></Route>
+        <Route path="/" element={<Landing />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+        </Route>
       </>
     )
   );
-  return <RouterProvider router={router}/>;
+  return <RouterProvider router={router} />;
 };
 
 export default AppRoutes;
