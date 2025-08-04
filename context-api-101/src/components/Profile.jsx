@@ -2,9 +2,18 @@ import React, { useContext } from 'react'
 import UserContext from '../context/UserContext'
 
 const Profile = () => {
-    const {user} = useContext(UserContext)
+    const {user,setUser} = useContext(UserContext)
+    const handleLogout = () =>{
+        setUser(null)
+    }
   return (
+    <div className="">
     <div>{user?<h1>Welcome {user.userName}</h1>: <h1>please login</h1>}</div>
+    {user && (
+  <button onClick={handleLogout}>Logout</button>
+)}
+
+    </div>
   )
 }
 

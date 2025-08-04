@@ -1,18 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import UserContextProvider from './context/UserContextProvider'
-import Login from './components/Login'
-import Profile from './components/Profile'
+import "./App.css";
+import UserContextProvider from "./context/UserContextProvider";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-
   return (
     <UserContextProvider>
-      <div className="test">Helllo Context api 101</div>
-      <Login/>
-      <Profile/>
+      <AppRoutes />
     </UserContextProvider>
-  )
+  );
 }
 
-export default App
+export default App;
