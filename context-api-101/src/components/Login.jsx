@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { setUser } = useContext(UserContext);
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
     if (!userName.trim() || !password.trim()) {
       const msg="Username and password are required"
@@ -15,6 +17,7 @@ const Login = () => {
     }
     e.preventDefault();
     setUser({ userName, password });
+    navigate("/dashboard")
   };
   return (
     <div>
