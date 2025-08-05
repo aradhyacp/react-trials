@@ -18,7 +18,11 @@ const AppRoutes = () => {
         <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route element={<ProtectedRoutes />}>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard" element={<Dashboard />} loader={async () => {
+            const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      return res.json();
+            
+          }}></Route>
           <Route path="/profile" element={<Profile />}></Route>
         </Route>
       </>
