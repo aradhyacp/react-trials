@@ -7,7 +7,7 @@ const Profile = () => {
         setUser(null)
     }
   return (
-    <div className="">
+    <div className="text-black">
     <div>{user?<h1>Welcome {user.userName}</h1>: <h1>please login</h1>}</div>
     {user && (
   <button onClick={handleLogout}>Logout</button>
