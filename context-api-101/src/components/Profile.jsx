@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
+import { useLoaderData } from "react-router-dom";
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
   const handleLogout = () => {
     setUser(null);
   };
+  const imgurl = useLoaderData()
   return (
     <div className="min-h-screen bg-[#171122] pt-13">
       {/* <div>{user?<h1>Welcome {user.userName}</h1>: <h1>please login</h1>}</div>
@@ -15,7 +17,7 @@ const Profile = () => {
       <div className="flex items-center flex-col gap-5 w-fit mx-auto">
         <div className="size-50 mt-6">
           <img
-            src="https://github.com/aradhyacp/react-trials/blob/main/light-dark-mode/public/defaultpfp.jpeg?raw=true"
+            src={imgurl}
             alt="pfp"
             className="rounded-full"
           />
