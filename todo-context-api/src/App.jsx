@@ -38,17 +38,16 @@ function App() {
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
     >
-      <div className="min-h-screen bg-green-400 flex flex-col gap-5 items-center py-40">
-        <div className="">
+      <div className="min-h-screen bg-[#d6b545] flex flex-col gap-5 items-center py-40">
+        <div className="w-screen">
           <div className="text-2xl font-bold text-center mb-8 mt-2 text-white">
             Manage your Todos
           </div>
         </div>
-        <div className="">
-          input goes here
+        <div className="w-[60%]">
           <TodoForm />
         </div>
-        <div className="">
+        <div className="flex flex-col gap-3 w-[60%]">
           {todos.map((x) => (
             <div className="" key={x.id}>
               <TodoElement todo={x} />
