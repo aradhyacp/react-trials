@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTodo } from "../context";
 
 const TodoElement = ({ todo }) => {
   const { deleteTodo, updateTodo, toggleComplete } = useTodo();
   const [isTodoEditable, setIsTodoEditable] = useState(false);
   const [todoMessage, setTodoMessage] = useState(todo.task);
+  const inputRef = useRef(null)
   const editTodo = () => {
     if (!todoMessage.trim()) return;
     updateTodo(todo.id, { ...todo, task: todoMessage });
@@ -61,6 +62,7 @@ const TodoElement = ({ todo }) => {
                 isTodoEditable ? "border-red-600/50 px-2" : "border-transparent"
               } ${todo.completed ? "line-through" : ""}`}
               value={todoMessage}
+              ref={inputRef}
               onChange={(e) => setTodoMessage(e.target.value)}
               readOnly={!isTodoEditable}
             />
@@ -78,7 +80,10 @@ const TodoElement = ({ todo }) => {
 
               if (isTodoEditable) {
                 editTodo();
-              } else setIsTodoEditable((prev) => !prev);
+              } else {
+                setIsTodoEditable((prev) => !prev);
+                setTimeout(() => inputRef.current?.focus(), 0);
+              }
             }}
             disabled={todo.completed}
           >
