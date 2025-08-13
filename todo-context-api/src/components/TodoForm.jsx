@@ -13,11 +13,11 @@ const TodoForm = () => {
     setTask("");
   };
   return (
-      <form className="flex w-full" onSubmit={add}>
+      <form className="flex" onSubmit={add}>
         <input
           type="text"
           placeholder="Write your todo"
-          className="flex w-[60%] overflow-hidden text-white focus:outline-0 focus:ring-0 border border-[#55523a] px-3 py-4 bg-[#27261b] focus:border-[#55523a] placeholder:text-[#bbb89b] p-[15px] text-base font-normal leading-normal rounded-l-lg"
+          className="flex w-118 overflow-hidden text-white focus:outline-0 focus:ring-0 border border-[#55523a] px-3 py-4 bg-[#27261b] focus:border-[#55523a] placeholder:text-[#bbb89b] p-[15px] text-base font-normal leading-normal rounded-l-lg"
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />

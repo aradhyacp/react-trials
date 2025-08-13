@@ -40,35 +40,28 @@ function App() {
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
     >
-      <div className="min-h-screen bg-[#181811] flex grow flex-col w-screen">
+      <div className="min-h-screen bg-[#181811] flex flex-col w-screen">
         <Header />
+        <div className="flex flex-col flex-grow">
         <div className="flex flex-col items-center">
-          <div className="text-white mx-auto text-2xl font-bold">Manage your Todos</div>
-          <TodoForm />
-        </div>
-        {/* <div className="w-screen">
-          <div className="text-2xl font-bold text-center mb-8 mt-2 text-white">
+          <div className="text-white text-2xl font-bold mb-3">
             Manage your Todos
           </div>
-        </div>
-        <div className="w-[60%]">
           <TodoForm />
         </div>
-        <div className="flex flex-col gap-3 w-[60%]">
-          {todos.map((x) => (
-            <div className="" key={x.id}>
-              <TodoElement todo={x} />
+        <div className="flex w-full flex-col mt-7">
+          <div className="text-white mx-auto text-xl font-medium">
+            Todo list
+          </div>
+          <div className="flex flex-col items-center mt-2">
+            <div className="flex flex-col gap-3 w-[60%]">
+              {todos.map((x) => (
+                <div className="" key={x.id}>
+                  <TodoElement todo={x} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div> */}
-        <div className="flex flex-col items-center mt-10">
-          <div className="text-white">Todo list</div>
-          <div className="flex flex-col gap-3 w-[60%]">
-          {todos.map((x) => (
-            <div className="" key={x.id}>
-              <TodoElement todo={x} />
-            </div>
-          ))}
+          </div>
         </div>
         </div>
         <Footer />

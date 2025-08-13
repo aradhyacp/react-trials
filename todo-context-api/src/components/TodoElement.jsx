@@ -18,25 +18,33 @@ const TodoElement = ({ todo }) => {
     <div>
       <div
         className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 duration-300  ${
-          todo.completed ? "bg-[#ccecb18e] text-black" : "bg-[#2f2f24] text-white"
-        }`}
+          todo.completed
+            ? "bg-[#ccecb18e] text-black"
+            : "bg-[#2f2f24] text-white"
+        } items-center justify-between`}
       >
-        <input
-          type="checkbox"
-          className="cursor-pointer"
-          checked={todo.completed}
-          onChange={toggleCompleted}
-        />
-        <input
-          type="text"
-          className={`border outline-none w-full bg-transparent rounded-lg ${
-            isTodoEditable ? "border-black/10 px-2" : "border-transparent"
-          } ${todo.completed ? "line-through" : ""}`}
-          value={todoMessage}
-          onChange={(e) => setTodoMessage(e.target.value)}
-          readOnly={!isTodoEditable}
-        />
+        <div className="flex flex-col">
+          <div className="flex flex-row">
+            <input
+              type="checkbox"
+              className="cursor-pointer mr-2"
+              checked={todo.completed}
+              onChange={toggleCompleted}
+            />
+            <input
+              type="text"
+              className={`border outline-none w-full bg-transparent rounded-lg py-2 ${
+                isTodoEditable ? "border-red-600/50 px-2" : "border-transparent"
+              } ${todo.completed ? "line-through" : ""}`}
+              value={todoMessage}
+              onChange={(e) => setTodoMessage(e.target.value)}
+              readOnly={!isTodoEditable}
+            />
+          </div>
+           <div className={todo.completed?`text-green-400`:`text-red-300`}>{todo.completed ? "Finished" : "Pending"}</div>
+        </div>
         {/* Edit, Save Button */}
+        <div className="flex flex-row gap-4">
         <button
           className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
           onClick={() => {
@@ -105,6 +113,7 @@ const TodoElement = ({ todo }) => {
             </svg>
           </div>
         </button>
+       </div>
       </div>
     </div>
   );
